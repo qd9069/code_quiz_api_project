@@ -1,3 +1,88 @@
-/* class="start-button" */
-/* class="wrongChoice" */
-/* class="rightChoice" */
+:root {
+    --light: #add8e6;
+    --deepblue: #31305a;
+    /* --orange: hsl(39, 91%, 55%); */
+}
+
+* {
+    display: block;
+}
+
+section h1 {
+    text-align: center;
+}
+
+p {
+    font-size: 1.1em;
+    margin-left: 2%;
+}
+
+button {
+    background-color: var(--light);
+    cursor: pointer;
+    letter-spacing: 0.21px;
+    text-align: center;
+    color: var(--deepblue);
+    padding: 0.3%;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 5px;
+    margin: 0.4%;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+.start-button {
+    font-size: 1.2em;
+    margin-left: 45%;
+}
+
+.questions {
+    margin-left: 2%;
+}
+
+article {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.choices {
+    margin: 1.8% 0%;
+}
+
+section h2 {
+    margin-left: 2%;
+}
+
+/* for class="enterInitial" */
+.enterInitial {
+    display: flex;
+}
+
+.enterInitial p {
+    margin: 0% 0% 0% 2%;
+    padding: 1% 0;
+}
+
+#initial {
+    border-color: var(--deepblue);
+    border-radius: 5px;
+    margin: 0% 0.5%;
+}
+
+#initial:focus {
+    border: 3px solid #555;
+} 
+
+/* for class="highscoresButton" */
+.highscoresButton {
+    display: flex;
+    margin-left: 2%;
+}
+
+.highscoresButton button {
+    margin-right: 2%;
+    margin-left: 0%;
+}
