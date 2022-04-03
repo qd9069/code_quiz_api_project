@@ -12,81 +12,111 @@
     <!--this is the main section-->
     <main>
         <!--page 1: click to start the quiz and timer-->
-        <section></section>
+        <section>
+            <h1>Code Quiz</h1>
+            <p>Please click on the Start button below to start the code quiz! Timer starts when you start the quiz and 5 seconds will be subtracted from the clock if you answer a question incorrectly.</p>
+            <p>The quiz will be ended if all questions are answered or the timer reaches 0. Please enter your initial after the quiz is ended.</p>
+            <button class="start-button">Start</button>
+        </section>
 
 
         <!--page 2: display Q1 with 4 clickable choices-->
         <section>
-
             <!--Q1: Which of the following keywords is used to define a variable in Javascript?
                 Answer: 1. var
                     2. let
                     3. Both 1 and 2 (Correct)
                     4. None of the above
             -->
-
+            <article>Q1: Which of the following keywords is used to define a variable in Javascript?</article>
+            <button class="wrongChoice">1. var</button>
+            <button class="wrongChoice">2. let</button>
+            <button class="rightChoice">3. Both 1 and 2</button>
+            <button class="wrongChoice">4. None of the above</button>
         </section>
 
 
         <!--page 3: display Q2 with 4 clickablechoices-->
         <section>
-
             <!--Q2: Which function is used to serialize an object into a JSON string in Javascript?
                 Answer: 1. stringify() (Correct)
                     2. parse()
                     3. convert()
                     4. None of the above
             -->
-
+            <article>Q2: Which function is used to serialize an object into a JSON string in Javascript?</article>
+            <button class="rightChoice">1. stringify()</button>
+            <button class="wrongChoice">2. parse()</button>
+            <button class="wrongChoice">3. convert()</button>
+            <button class="wrongChoice">4. None of the above</button>
         </section>
 
 
         <!--page 4: display Q3 with 4 clickable choices-->
         <section>
-
              <!--Q3: How to stop an interval timer in Javascript?
                 Answer: 1. clearInterval (Correct)
                     2. clearTimer
                     3. intervalOver
                     4. None of the above
             -->
-
+            <article>Q3: How to stop an interval timer in Javascript?</article>
+            <button class="rightChoice">1. clearInterval</button>
+            <button class="wrongChoice">2. clearTimer</button>
+            <button class="wrongChoice">3. intervalOver</button>
+            <button class="wrongChoice">4. None of the above</button>
         </section>
 
 
         <!--page 5: display Q4 with 4 clickable choices-->
         <section>
-
              <!--Q4: Arrays in JavaScript are defined by which of the following statements?
                 Answer: 1. It is an ordered list of objects
                     2. It is an ordered list of string
                     3. It is an ordered list of functions
                     4. It is an ordered list of values (Correct)
             -->
-
+            <article>Q4: Arrays in JavaScript are defined by which of the following statements?</article>
+            <button class="wrongChoice">1. It is an ordered list of objects</button>
+            <button class="wrongChoice">2. It is an ordered list of string</button>
+            <button class="wrongChoice">3. It is an ordered list of functions</button>
+            <button class="rightChoice">4. It is an ordered list of values</button>
         </section>
 
 
         <!--page 6: display Q5 with 4 clickable choices-->
         <section>
-
              <!--Q5: What will be the result or type of error if p is not defined in the following JavaScript code: console.log(p) ?
                 Answer: 1. Value not found Error
                     2. Reference Error (Correct)
                     3. Null
                     4. Zero
             -->
-
+            <article>Q5: What will be the result or type of error if p is not defined in the following JavaScript code: console.log(p) ?</article>
+            <button class="wrongChoice">1. Value not found Error</button>
+            <button class="rightChoice">2. Reference Error</button>
+            <button class="wrongChoice">3. Null</button>
+            <button class="wrongChoice">4. Zero</button>
         </section>
 
 
         <!--page 7: to show final score and enter initial-->
-        <section></section>
+        <section>
+            <h2>All done!</h2>
+            <p>You final score is _.</p>
+            <p>Enter your initial:</p>
+            <!-- User input initial and click submit button -->
+            <button>Submit</button>
+        </section>
 
 
         <!--page 8: display Highscores in list; with 2 clicks "Go Back" and "clear Highscores"-->
-        <section></section>
-
+        <section>
+            <h2>Highscores</h2>
+            <!-- a list to show Highscores with background color -->
+            <button>Go Back</button>
+            <button>clear Highscores</button>
+        </section>
 
 
     </main>
