@@ -8,6 +8,11 @@
     display: block;
 }
 
+#timer {
+    text-align: right;
+}
+
+
 section h1 {
     text-align: center;
 }

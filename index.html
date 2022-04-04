@@ -11,6 +11,10 @@
 <body>
     <!--this is the main section-->
     <main id="allPages">
+        <!-- to display the timer  -->
+        <div id="timer"></div>
+        
+    
         <!--page 1: click to start the quiz and timer-->
         <section id="page1">
             <h1>Code Quiz</h1>
@@ -30,10 +34,10 @@
             -->
             <article>Q1: Which of the following keywords is used to define a variable in Javascript?</article>
             <div class="choices">
-                <button class="wrongChoice">1. var</button>
-                <button class="wrongChoice">2. let</button>
+                <button id="wrongQ11" class="wrongChoice">1. var</button>
+                <button id="wrongQ12" class="wrongChoice">2. let</button>
                 <button id="correct1" class="rightChoice">3. Both 1 and 2</button>
-                <button class="wrongChoice">4. None of the above</button>
+                <button id="wrongQ13" class="wrongChoice">4. None of the above</button>
             </div>   
         </section>
 
@@ -49,9 +53,9 @@
             <article>Q2: Which function is used to serialize an object into a JSON string in Javascript?</article>
             <div class="choices">
                 <button id="correct2" class="rightChoice">1. stringify()</button>
-                <button class="wrongChoice">2. parse()</button>
-                <button class="wrongChoice">3. convert()</button>
-                <button class="wrongChoice">4. None of the above</button>  
+                <button id="wrongQ21" class="wrongChoice">2. parse()</button>
+                <button id="wrongQ22" class="wrongChoice">3. convert()</button>
+                <button id="wrongQ23" class="wrongChoice">4. None of the above</button>  
             </div>
         </section>
 
@@ -67,9 +71,9 @@
             <article>Q3: How to stop an interval timer in Javascript?</article>
             <div class="choices">
                 <button id="correct3" class="rightChoice">1. clearInterval</button>
-                <button class="wrongChoice">2. clearTimer</button>
-                <button class="wrongChoice">3. intervalOver</button>
-                <button class="wrongChoice">4. None of the above</button>   
+                <button id="wrongQ31" class="wrongChoice">2. clearTimer</button>
+                <button id="wrongQ32" class="wrongChoice">3. intervalOver</button>
+                <button id="wrongQ33" class="wrongChoice">4. None of the above</button>   
             </div>
         </section>
 
@@ -84,9 +88,9 @@
             -->
             <article>Q4: Arrays in JavaScript are defined by which of the following statements?</article>
             <div class="choices">
-                <button class="wrongChoice">1. It is an ordered list of objects</button>
-                <button class="wrongChoice">2. It is an ordered list of string</button>
-                <button class="wrongChoice">3. It is an ordered list of functions</button>
+                <button id="wrongQ41" class="wrongChoice">1. It is an ordered list of objects</button>
+                <button id="wrongQ42" class="wrongChoice">2. It is an ordered list of string</button>
+                <button id="wrongQ43" class="wrongChoice">3. It is an ordered list of functions</button>
                 <button id="correct4" class="rightChoice">4. It is an ordered list of values</button> 
             </div>
         </section>
@@ -102,10 +106,10 @@
             -->
             <article>Q5: What will be the result or type of error if p is not defined in the following JavaScript code: console.log(p) ?</article>
             <div class="choices">
-                <button class="wrongChoice">1. Value not found Error</button>
+                <button id="wrongQ51" class="wrongChoice">1. Value not found Error</button>
                 <button id="correct5" class="rightChoice">2. Reference Error</button>
-                <button class="wrongChoice">3. Null</button>
-                <button class="wrongChoice">4. Zero</button> 
+                <button id="wrongQ52" class="wrongChoice">3. Null</button>
+                <button id="wrongQ53" class="wrongChoice">4. Zero</button> 
             </div>
         </section>
 
