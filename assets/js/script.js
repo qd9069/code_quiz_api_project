@@ -131,6 +131,7 @@ for (let i = 0; i < wrongAnswers.length; i++) {
     wrongAnswers[i].addEventListener("click", subtractTime);
     function subtractTime () {
         secondsLeft = secondsLeft - 3;
+        alert("The answer is not correct.");
     }  
 }
 
@@ -163,21 +164,72 @@ function setTime() {
     
 }
 
-
-// set var for input value of initial
-//  var inputInitial = document.getElementById("initial").value;
-//  console.log (inputInitial)
-
-
-// to show page8-pages[7] after submit initial
 var submitButton = document.getElementById("submit");
-submitButton.addEventListener("click", goPg8);
+// set var to display message if no inital is entered
+var msgDiv = document.querySelector("#msg");
+
+function displayMessage(type, message) {
+    msgDiv.textContent = message;
+    msgDiv.setAttribute("class", type);
+  }
+
+
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    // set var for input value of initial and score
+    var inputInitial = document.getElementById("initial").value;
+    var scores = secondsLeft;
+
+
+    if (inputInitial === "") {
+        displayMessage("error", "Initial cannot be blank");
+      } else {
+        displayMessage("success", "Initial has been saved");
+
+        // use setItem(key, value) to store scores and initials in localStorage so that it can be used next time the user returns to the page
+        localStorage.setItem("score", scores);
+        localStorage.setItem("userInitial", inputInitial);
+
+        // to show page8-pages[7] after submit initial - go to page 8
+        goPg8 ();
+        //run the function to display the score and initial
+        highScores ();
+        
+      }
+
+});
+
+
+// var submitButton = document.getElementById("submit");
+// submitButton.addEventListener("click", goPg8);
 
 function goPg8 () {
     // console.log ('goToPg8');
     pages[6].style.display = "none";
     pages[7].style.display = "block";
 }
+
+var showHighScores = document.querySelector("#showScores");
+
+function highScores () {
+
+    // get initial and score from local storage
+    var localScore = localStorage.getItem("score");
+    var localInitial = localStorage.getItem("userInitial");
+
+    // check to see if there was an score and initial
+    if (!localScore || !localInitial) {
+        // return will end the function here without continuing to the next line
+        return;
+    }
+
+    // email and password were found in storage, display them to the user
+    showHighScores.textContent = localInitial + " : " + localScore;
+    
+}
+
+
 
 // in page 8: clear highscore
 
