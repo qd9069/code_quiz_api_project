@@ -17,36 +17,34 @@ var pages = [pageOne, pageTwo, pageThree, pageFour, pageFive, pageSix, pageSeven
 
 
 // set var for wrong choices
-// for Q1
+// array for Q1
 var wrong11 = document.getElementById("wrongQ11");
 var wrong12 = document.getElementById("wrongQ12");
 var wrong13 = document.getElementById("wrongQ13");
 var wrongQ1 = [wrong11, wrong12, wrong13];
-//for Q2
+//array for Q2
 var wrong21 = document.getElementById("wrongQ21");
 var wrong22 = document.getElementById("wrongQ22");
 var wrong23 = document.getElementById("wrongQ23");
 var wrongQ2 = [wrong21, wrong22, wrong23];
-//for Q3
+//array for Q3
 var wrong31 = document.getElementById("wrongQ31");
 var wrong32 = document.getElementById("wrongQ32");
 var wrong33 = document.getElementById("wrongQ33");
 var wrongQ3 = [wrong31, wrong32, wrong33];
-//for Q4
+//array for Q4
 var wrong41 = document.getElementById("wrongQ41");
 var wrong42 = document.getElementById("wrongQ42");
 var wrong43 = document.getElementById("wrongQ43");
 var wrongQ4 = [wrong41, wrong42, wrong43];
-//for Q5
+//array for Q5
 var wrong51 = document.getElementById("wrongQ51");
 var wrong52 = document.getElementById("wrongQ52");
 var wrong53 = document.getElementById("wrongQ53");
 var wrongQ5 = [wrong51, wrong52, wrong53];
-// to combine all wrong choices
+// to combine all wrong choices in array
 var wrongAnswers = wrongQ1.concat(wrongQ2, wrongQ3, wrongQ4, wrongQ5);
 // console.log (wrongAnswers)
-
-
 
 
 
@@ -129,7 +127,8 @@ function goPg7 () {
 startButton.addEventListener("click", setTime);
 var secondsLeft = 20;
 var timeEl = document.getElementById("timer");
-
+// set var to record time
+// var stopTime;
 
 function setTime() {
   // Sets interval in variable
@@ -138,33 +137,63 @@ function setTime() {
         timeEl.textContent = "Time left: " + secondsLeft;
 
 
-        if(secondsLeft === 0) {
+
+        if(secondsLeft <= 0) {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
+            secondsLeft = 0
             // Calls function to stop quiz to page 7
             goPg7();
         } 
-       
+        
+
+
+        //when quzi completed-in page7-pages[6]/, timer stop and store that time
+        correctAnswer5.addEventListener("click", stopTimer);
+
+        function stopTimer () {
+            clearInterval(timerInterval);
+        
+        }
+
+        //display the stopTime in page7
+        document.getElementById("page7").children[1].textContent = "You final score is " + secondsLeft + "."
+
+
 
     }, 1000);
+
+    //to subtract time for wrong answer
+    //loop through wrongAnswers array: for each wrongAnswer, add event listener to decrease timer
+
+    // for (let i = 0; i < wrongAnswers.length; i++) {
+    //     wrongAnswers[i].addEventListener("click", subtractTime);
+    //     function subtractTime () {
+    //         if (secondsLeft >= 0) {
+    //         secondsLeft = secondsLeft - 3 
+    //         } else if (secondsLeft < 0) {
+    //             secondsLeft = 0
+    //             clearInterval(timerInterval);
+                
+    //         }
+
+            
+    //     }  
+
+    // }
+
+
+
+
+
+
+    
+
+
+
 }
 
-
-//to subtract time for wrong answer
-// loop through wrongAnswers array: for each wrongAnswer, add event listener to decrease timer
-
-// for (let i = 0; i < wrongAnswers.length; i++) {
-//     wrongAnswers[i].addEventListener("click", subtractTime);
-//     function subtractTime () {
-//         secondsLeft = secondsLeft - 3  
-//     }  
-//   }
  
-//secondLeft = 0, quiz stop
-//secondLeft stop when quzi completed
-
-
-
 
 
 // to show page8-pages[7] after submit initial
