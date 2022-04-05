@@ -1,8 +1,3 @@
-// to hide all pages
-// var pages = document.getElementById("allPages");
-// pages.style.display = "none";
-
-
 // set var for all pages
 var pageOne = document.getElementById("page1");
 var pageTwo = document.getElementById("page2");
@@ -73,7 +68,7 @@ var correctAnswer1 = document.getElementById("correct1");
 correctAnswer1.addEventListener("click", goPg3);
 
 function goPg3 () {
-    console.log ('CorrectAnswerQ1');
+    // console.log ('CorrectAnswerQ1');
     pages[1].style.display = "none";
     pages[2].style.display = "block";
 }
@@ -83,7 +78,7 @@ var correctAnswer2 = document.getElementById("correct2");
 correctAnswer2.addEventListener("click", goPg4);
 
 function goPg4 () {
-    console.log ('CorrectAnswerQ2');
+    // console.log ('CorrectAnswerQ2');
     pages[2].style.display = "none";
     pages[3].style.display = "block";
 }
@@ -93,7 +88,7 @@ var correctAnswer3 = document.getElementById("correct3");
 correctAnswer3.addEventListener("click", goPg5);
 
 function goPg5 () {
-    console.log ('CorrectAnswerQ3');
+    // console.log ('CorrectAnswerQ3');
     pages[3].style.display = "none";
     pages[4].style.display = "block";
 }
@@ -103,7 +98,7 @@ var correctAnswer4 = document.getElementById("correct4");
 correctAnswer4.addEventListener("click", goPg6);
 
 function goPg6 () {
-    console.log ('CorrectAnswerQ4');
+    // console.log ('CorrectAnswerQ4');
     pages[4].style.display = "none";
     pages[5].style.display = "block";
 }
@@ -113,7 +108,7 @@ var correctAnswer5 = document.getElementById("correct5");
 correctAnswer5.addEventListener("click", goPg7);
 
 function goPg7 () {
-    console.log ('CorrectAnswerQ5');
+    // console.log ('CorrectAnswerQ5');
     pages[5].style.display = "none";
     pages[6].style.display = "block";
     // to hide all questions when time reaches 0 
@@ -121,79 +116,57 @@ function goPg7 () {
     pages[2].style.display = "none";
     pages[3].style.display = "none";
     pages[4].style.display = "none";
+    //display the final time in page7
+    document.getElementById("page7").children[1].textContent = "You final score is " + secondsLeft + "."
 }
 
 // set timer to count down for quiz
 startButton.addEventListener("click", setTime);
 var secondsLeft = 20;
 var timeEl = document.getElementById("timer");
-// set var to record time
-// var stopTime;
+
+//to subtract time for wrong answer
+//loop through wrongAnswers array: for each wrongAnswer, add event listener to decrease timer
+for (let i = 0; i < wrongAnswers.length; i++) {
+    wrongAnswers[i].addEventListener("click", subtractTime);
+    function subtractTime () {
+        secondsLeft = secondsLeft - 3;
+    }  
+}
 
 function setTime() {
   // Sets interval in variable
   var timerInterval = setInterval(function() {
         secondsLeft--;
-        timeEl.textContent = "Time left: " + secondsLeft;
-
-
+        console.log(secondsLeft);
 
         if(secondsLeft <= 0) {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
-            secondsLeft = 0
+            secondsLeft = 0;
+
             // Calls function to stop quiz to page 7
             goPg7();
         } 
-        
 
+        timeEl.textContent = "Time left: " + secondsLeft;
 
-        //when quzi completed-in page7-pages[6]/, timer stop and store that time
+        //when quzi completed-in page7-pages[6]/, timer stop
         correctAnswer5.addEventListener("click", stopTimer);
-
         function stopTimer () {
             clearInterval(timerInterval);
-        
         }
-
-        //display the stopTime in page7
-        document.getElementById("page7").children[1].textContent = "You final score is " + secondsLeft + "."
-
 
 
     }, 1000);
 
-    //to subtract time for wrong answer
-    //loop through wrongAnswers array: for each wrongAnswer, add event listener to decrease timer
-
-    // for (let i = 0; i < wrongAnswers.length; i++) {
-    //     wrongAnswers[i].addEventListener("click", subtractTime);
-    //     function subtractTime () {
-    //         if (secondsLeft >= 0) {
-    //         secondsLeft = secondsLeft - 3 
-    //         } else if (secondsLeft < 0) {
-    //             secondsLeft = 0
-    //             clearInterval(timerInterval);
-                
-    //         }
-
-            
-    //     }  
-
-    // }
-
-
-
-
-
-
     
-
-
-
 }
 
- 
+
+// set var for input value of initial
+//  var inputInitial = document.getElementById("initial").value;
+//  console.log (inputInitial)
 
 
 // to show page8-pages[7] after submit initial
@@ -201,7 +174,7 @@ var submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", goPg8);
 
 function goPg8 () {
-    console.log ('goToPg8');
+    // console.log ('goToPg8');
     pages[6].style.display = "none";
     pages[7].style.display = "block";
 }
@@ -214,7 +187,7 @@ var goBackButton = document.getElementById("goBack");
 goBackButton.addEventListener("click", restartQuiz);
 
 function restartQuiz () {
-    console.log ('restartQuiz');
+    // console.log ('restartQuiz');
     pages[7].style.display = "none";
     pages[0].style.display = "block";
 }
