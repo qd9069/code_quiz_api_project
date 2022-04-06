@@ -81,6 +81,17 @@ section h2 {
     border: 3px solid #555;
 } 
 
+#msg {
+    color: red;
+}
+
+#list {
+    font-weight: bold;
+    background-color: var(--light);
+    width: 30%;
+    margin-left: 2%;
+}
+
 /* for class="highscoresButton" */
 .highscoresButton {
     display: flex;

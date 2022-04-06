@@ -122,7 +122,7 @@ function goPg7 () {
 
 // set timer to count down for quiz
 startButton.addEventListener("click", setTime);
-var secondsLeft = 20;
+var secondsLeft = 50;
 var timeEl = document.getElementById("timer");
 
 //to subtract time for wrong answer
@@ -139,7 +139,7 @@ function setTime() {
   // Sets interval in variable
   var timerInterval = setInterval(function() {
         secondsLeft--;
-        console.log(secondsLeft);
+        // console.log(secondsLeft);
 
         if(secondsLeft <= 0) {
             // Stops execution of action at set interval
@@ -281,5 +281,6 @@ function restartQuiz () {
     // console.log ('restartQuiz');
     pages[7].style.display = "none";
     pages[0].style.display = "block";
-    secondsLeft = 20;
+    secondsLeft = 50;
+    msgDiv.textContent = "";
 }
