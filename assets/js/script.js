@@ -173,29 +173,82 @@ function displayMessage(type, message) {
     msgDiv.setAttribute("class", type);
   }
 
+//------------------------ for local storage ------------------------
+
+
+var listEl = document.querySelector("#list");
+
+function renderList () {
+
+    // get initial and score from local storage
+    var items = JSON.parse(localStorage.getItem("items")) || [];
+    // console.log(typeof items);
+    // to display the Highscores list in blank
+    listEl.innerHTML = "";
+
+    // console.log(items.length);
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var itemEl = document.createElement("li");
+        itemEl.textContent = item.inputInitial + " - " + item.score;
+        listEl.append(itemEl);
+    }
+
+}
+
+
 
 submitButton.addEventListener("click", function(event) {
     event.preventDefault();
 
-    // set var for input value of initial and score
-    var inputInitial = document.getElementById("initial").value;
-    var scores = secondsLeft;
+    
+    // set object for var of input initial and score
+    var newItem = {
+        inputInitial: document.getElementById("initial").value.trim(),
+        score: secondsLeft,
+    };
 
 
-    if (inputInitial === "") {
+    if (newItem.inputInitial === "") {
         displayMessage("error", "Initial cannot be blank");
       } else {
         displayMessage("success", "Initial has been saved");
 
-        // use setItem(key, value) to store scores and initials in localStorage so that it can be used next time the user returns to the page
-        localStorage.setItem("score", scores);
-        localStorage.setItem("userInitial", inputInitial);
+        
+
+        // to get the initial and score from local storage, and add new initial and score to it
+        var items = JSON.parse(localStorage.getItem("items")) || [];
+        items.push(newItem);
+        
+
+
+
+        // sorting object from stack overflow https://stackoverflow.com/a/1129270/3105371
+        // function compare(a, b) {
+        //     if (a.score > b.score) {
+        //        return -1; 
+        //     }
+        //     if (a.score < b.score) {
+        //         return 1;
+        //     }
+        //     return 0;
+        // }
+
+        // items.sort(compare);
+
+
+        // use setItem(key, value) to store the object of score and initial in localStorage so that it can be used next time the user returns to the page
+        localStorage.setItem("items", JSON.stringify(items));
+        
 
         // to show page8-pages[7] after submit initial - go to page 8
         goPg8 ();
-        //run the function to display the score and initial
-        highScores ();
-        
+        // run the function to display the score and initial
+        renderList();
+
+        // to clear the initial input field
+        document.getElementById("initial").value = "";
+
       }
 
 });
@@ -210,28 +263,12 @@ function goPg8 () {
     pages[7].style.display = "block";
 }
 
-var showHighScores = document.querySelector("#showScores");
-
-function highScores () {
-
-    // get initial and score from local storage
-    var localScore = localStorage.getItem("score");
-    var localInitial = localStorage.getItem("userInitial");
-
-    // check to see if there was an score and initial
-    if (!localScore || !localInitial) {
-        // return will end the function here without continuing to the next line
-        return;
-    }
-
-    // email and password were found in storage, display them to the user
-    showHighScores.textContent = localInitial + " : " + localScore;
-    
-}
-
-
+//--------------------------------------------------------------------------
 
 // in page 8: clear highscore
+
+
+
 
 
 //in page 8: click Go back to return to page 1
@@ -242,4 +279,5 @@ function restartQuiz () {
     // console.log ('restartQuiz');
     pages[7].style.display = "none";
     pages[0].style.display = "block";
+    secondsLeft = 20;
 }
