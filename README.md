@@ -1,7 +1,7 @@
 # Code Quiz - Web APIs Project
 
 ## Link
-### Please click [here](https://qd9069.github.io/) to find the deployed project.
+### Please click [here](https://qd9069.github.io/code_quiz_api_project/) to find the deployed project.
 
 
 ## Table of Contents
@@ -19,7 +19,7 @@ Welcome to the Code Quiz application page!
 
 This is a fun quiz for anyone who likes coding. There are five questions totally in the quiz and you will need to complete all the questions before the timer reaches 0. Everytime when you pick a wrong answer for the question, time will be subtracted from your clock. After the quiz, please enter your initial so we can save your score. You can also view the Highscores list at the end of the quiz to compare with your peers.
 
-The main purpose of this project is to practise my skills for Web APIs in JavaScript, including the uses of for loop, set/clear time interval, event listener, local storage, etc.
+The main purpose of this project is to practise my skills for Web APIs in JavaScript, including the uses of for loop, set/clear time interval, event listener, local storage, function for timer to count down, etc.
 
 Hope we all enjoy this code quiz! 
 
