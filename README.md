@@ -17,7 +17,7 @@
 
 Welcome to the Code Quiz application page!
 
-This is a fun quiz for anyone who likes coding. There are five questions totally in the quiz and you will need to complete all the questions before the timer reaches 0. Everytime when you pick a wrong answer for the question, time will be subtracted from your clock. After the quiz, please enter your initial so we can save your score. You can also view the Highscores list at the end of the quiz to compare with your peers.
+This is a fun quiz for anyone who likes coding. There are total of five questions in the quiz and you will need to complete all the questions before the timer reaches 0. Everytime when you pick a wrong answer for the question, time will be subtracted from your clock. After the quiz, please enter your initial so we can save your score. You can also view the Highscores list at the end of the quiz to compare with your peers.
 
 The main purpose of this project is to practise my skills for Web APIs in JavaScript, including the uses of for loop, set/clear time interval, event listener, local storage, function for timer to count down, etc.
 
