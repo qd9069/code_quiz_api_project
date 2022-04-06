@@ -197,7 +197,6 @@ function renderList () {
 }
 
 
-
 submitButton.addEventListener("click", function(event) {
     event.preventDefault();
 
@@ -222,19 +221,18 @@ submitButton.addEventListener("click", function(event) {
         
 
 
-
         // sorting object from stack overflow https://stackoverflow.com/a/1129270/3105371
-        // function compare(a, b) {
-        //     if (a.score > b.score) {
-        //        return -1; 
-        //     }
-        //     if (a.score < b.score) {
-        //         return 1;
-        //     }
-        //     return 0;
-        // }
+        function compare(a, b) {
+            if (a.score > b.score) {
+               return -1; 
+            }
+            if (a.score < b.score) {
+                return 1;
+            }
+            return 0;
+        }
 
-        // items.sort(compare);
+        items.sort(compare);
 
 
         // use setItem(key, value) to store the object of score and initial in localStorage so that it can be used next time the user returns to the page
@@ -263,12 +261,16 @@ function goPg8 () {
     pages[7].style.display = "block";
 }
 
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------
 
 // in page 8: clear highscore
+var clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", clearHighscores);
 
-
-
+function clearHighscores () {
+    localStorage.clear();
+    listEl.innerHTML = "";
+}
 
 
 //in page 8: click Go back to return to page 1
