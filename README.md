@@ -85,8 +85,8 @@ After clear Highscores:
 ![image for clear Highscores](assets/images/code_quiz_clear_highscores.png)
 
 ## License
-
 Copyright (c) 2022 Elaine D. Released under the MIT [License](./LICENSE).
+
 ---
 Code originally by QD 2022 🏆
 
